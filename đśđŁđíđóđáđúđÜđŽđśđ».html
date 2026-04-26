@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Инструкция — TraderMind</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:700px;margin:0 auto;padding:20px;background:#faf9ff;color:#2d2756}
+h1{color:#6C5CE7;font-size:28px;margin-bottom:8px}
+h2{color:#2d2756;font-size:20px;margin:32px 0 12px;padding-left:12px;border-left:4px solid #6C5CE7}
+.step{background:#fff;border-radius:16px;padding:20px;margin-bottom:16px;border:1px solid rgba(108,92,231,0.12);box-shadow:0 2px 12px rgba(108,92,231,0.07)}
+.step-num{background:#6C5CE7;color:#fff;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin-right:10px;flex-shrink:0}
+.step-title{font-size:18px;font-weight:700;color:#2d2756;display:flex;align-items:center;margin-bottom:10px}
+.step p{color:#7d6fa0;line-height:1.6;margin-bottom:8px;font-size:15px}
+code{background:#f0eeff;color:#6C5CE7;padding:2px 8px;border-radius:6px;font-family:monospace;font-size:14px}
+.url{background:#f0eeff;border:1px solid #6C5CE7;border-radius:10px;padding:10px 16px;font-weight:700;color:#6C5CE7;font-size:16px;display:block;margin:8px 0;text-decoration:none}
+.important{background:#fff8e6;border:1px solid #fdcb6e;border-radius:10px;padding:12px 16px;margin:10px 0;font-size:14px;color:#856404}
+.success{background:#f0fff4;border:1px solid #27ae60;border-radius:10px;padding:12px 16px;margin:10px 0;font-size:14px;color:#1a7a3a;font-weight:600}
+.tag{background:#6C5CE7;color:#fff;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700}
+img-placeholder{display:block;background:#f0eeff;border-radius:10px;padding:40px;text-align:center;color:#9b8ec4;font-size:14px;margin:10px 0}
+</style>
+</head>
+<body>
+<h1>🚀 TraderMind — Запуск на сервере</h1>
+<p style="color:#7d6fa0;font-size:15px">Следуй этим шагам по порядку. Займёт около 15 минут.</p>
+
+<h2>Шаг 1 — GitHub: создай репозиторий</h2>
+<div class="step">
+  <div class="step-title"><span class="step-num">1</span>Зайди на GitHub</div>
+  <p>Открой в браузере:</p>
+  <a class="url" href="https://github.com/new" target="_blank">github.com/new</a>
+  <p>Войди в свой аккаунт если нужно.</p>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">2</span>Создай новый репозиторий</div>
+  <p><b>Repository name:</b> напиши <code>tradermind</code></p>
+  <p><b>Visibility:</b> выбери <span class="tag">Public</span></p>
+  <p>Всё остальное не трогай.</p>
+  <p>Нажми зелёную кнопку <b>"Create repository"</b></p>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">3</span>Загрузи файлы</div>
+  <p>На странице репозитория нажми <b>"uploading an existing file"</b> (ссылка посередине страницы)</p>
+  <p>Перетащи в окно ВСЕ три файла из папки <code>tradermind-server</code>:</p>
+  <p>📄 <code>server.js</code><br/>📄 <code>package.json</code><br/>📄 <code>.gitignore</code></p>
+  <p>Затем создай папку <code>public</code> и загрузи в неё <code>index.html</code></p>
+  <div class="important">⚠️ Важно: файл .gitignore может быть скрыт на Mac. Включи показ скрытых файлов: Cmd+Shift+точка</div>
+  <p>Нажми <b>"Commit changes"</b> (зелёная кнопка внизу)</p>
+</div>
+
+<h2>Шаг 2 — Render: запусти сервер бесплатно</h2>
+<div class="step">
+  <div class="step-title"><span class="step-num">4</span>Зайди на Render</div>
+  <a class="url" href="https://render.com" target="_blank">render.com</a>
+  <p>Нажми <b>"Get Started for Free"</b> → Sign up with GitHub</p>
+  <p>Разреши Render доступ к GitHub.</p>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">5</span>Создай Web Service</div>
+  <p>На главной странице Render нажми <b>"New +"</b> → <b>"Web Service"</b></p>
+  <p>Выбери <b>"Build and deploy from a Git repository"</b></p>
+  <p>Нажми <b>"Next"</b></p>
+  <p>В списке репозиториев найди <b>tradermind</b> и нажми <b>"Connect"</b></p>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">6</span>Настрой сервис</div>
+  <p>Заполни поля:</p>
+  <p><b>Name:</b> <code>tradermind</code></p>
+  <p><b>Region:</b> Frankfurt (EU Central) — для скорости</p>
+  <p><b>Branch:</b> <code>main</code></p>
+  <p><b>Runtime:</b> <code>Node</code></p>
+  <p><b>Build Command:</b> <code>npm install</code></p>
+  <p><b>Start Command:</b> <code>node server.js</code></p>
+  <p><b>Instance Type:</b> <span class="tag">Free</span></p>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">7</span>Добавь API-ключ Anthropic</div>
+  <p>Прокрути вниз до раздела <b>"Environment Variables"</b></p>
+  <p>Нажми <b>"Add Environment Variable"</b></p>
+  <p><b>Key:</b> <code>ANTHROPIC_API_KEY</code></p>
+  <p><b>Value:</b> вставь свой ключ который начинается с <code>sk-ant-...</code></p>
+  <div class="important">⚠️ Ключ виден только тебе на сервере — он не попадёт в код</div>
+  <p>Нажми <b>"Create Web Service"</b></p>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">8</span>Подожди деплой (3-5 минут)</div>
+  <p>Render начнёт собирать приложение. Ты увидишь логи. Жди пока появится:</p>
+  <div class="success">✅ Your service is live</div>
+  <p>Твоя ссылка будет выглядеть так:</p>
+  <code style="font-size:15px">https://tradermind.onrender.com</code>
+</div>
+
+<h2>Шаг 3 — iPhone: добавь на рабочий стол</h2>
+<div class="step">
+  <div class="step-title"><span class="step-num">9</span>Открой на iPhone</div>
+  <p>Скопируй ссылку с Render и открой её в <b>Safari</b> на iPhone.</p>
+  <div class="important">⚠️ Именно Safari — Chrome на iPhone не поддерживает добавление на рабочий стол</div>
+</div>
+<div class="step">
+  <div class="step-title"><span class="step-num">10</span>Добавь на экран Домой</div>
+  <p>Нажми кнопку <b>Поделиться</b> (квадрат со стрелкой вверх) внизу Safari</p>
+  <p>Прокрути список вниз и нажми <b>"На экран «Домой»"</b></p>
+  <p>Название: <b>TraderMind</b></p>
+  <p>Нажми <b>"Добавить"</b></p>
+  <div class="success">✅ Иконка появится на рабочем столе iPhone!</div>
+  <p>Открывается как настоящее приложение — без адресной строки браузера. Гуру работает. Данные сохраняются.</p>
+</div>
+
+<h2>Если что-то пошло не так</h2>
+<div class="step">
+  <p><b>Ошибка при деплое на Render:</b> проверь что Build Command = <code>npm install</code> и Start Command = <code>node server.js</code></p>
+  <p><b>Гуру не отвечает:</b> проверь что ANTHROPIC_API_KEY добавлен правильно в Environment Variables на Render</p>
+  <p><b>Страница не открывается:</b> подожди ещё 2-3 минуты — первый старт медленный</p>
+  <p><b>Бесплатный Render засыпает:</b> первый запрос после паузы идёт 30 секунд — это нормально. Потом быстро.</p>
+</div>
+</body>
+</html>
